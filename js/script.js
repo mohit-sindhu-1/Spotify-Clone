@@ -56,7 +56,7 @@ async function addSongsToSongsList(artist) {
         <img class="invert-1" src="Assets/music.svg" alt="music">
             <div class="info">
                 <div class="song-name"> ${songName}</div>
-                <div class="song-artist">${artist.replaceAll("-"," ")}</div>
+                <div class="song-artist">${artist.replaceAll("-", " ")}</div>
         </div>
         <div class="play-now">
             <span>Play Now</span>
@@ -209,14 +209,14 @@ async function main() {
 
     // listen for timeupdate event 
     currentSong.addEventListener("timeupdate", () => {
+        // play the next song if the current song has ended
+        if (currentSong.currentTime == currentSong.duration) {
+            setPreviousAndNextSong(artist, nextSongLi);
+        }
         // updating song time 
         document.querySelector(".song-time").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`;
         // moving circle of seekbar 
         document.querySelector(".circle").style.left = `${(currentSong.currentTime / currentSong.duration) * 100}%`;
-        // changing pause icon to play icon when song has ended
-        if (currentSong.currentTime == currentSong.duration) {
-            playBtn.src = "Assets/play.svg";
-        }
     })
 
     // add an event listener to seekbar
