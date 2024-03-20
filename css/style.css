@@ -191,12 +191,6 @@ body {
     position: relative;
 }
 
-.spotify-playlists .card-container .card .artist-img {
-    object-fit: cover;
-    object-fit: scale-down;
-    object-position: center center;
-}
-
 .spotify-playlists .card-container .card> :last-child {
     font-weight: 400;
     font-size: 12px;
@@ -277,7 +271,7 @@ body {
     width: 99.2%;
     background: black;
     position: absolute;
-    bottom: 0px;
+    bottom: 2px;
     left: 0%;
     border-radius: 10px;
     cursor: pointer;
@@ -317,16 +311,34 @@ body {
 
     .header .nav .hamburger {
         display: block;
+        position: fixed;
+        top: 25px;
+        left: 17px;
+        z-index: 1;
+    }
+
+    .header .nav .img {
+        position: relative;
+        left: 35px;
     }
 
     .left {
         width: 40vw;
         height: 100vh;
         background-color: black;
-        position: absolute;
+        position: fixed;
+        top: 0;
         left: -100%;
         transition: all 0.4s ease;
         z-index: 1;
+    }
+
+    .spotify-playlists {
+        text-align: center;
+    }
+
+    .spotify-playlists .card-container {
+        justify-content: center;
     }
 
     .header .buttons button {
@@ -395,7 +407,7 @@ body {
     }
 
     .spotify-playlists .card-container .card {
-        width: 77vw;
+        width: 70vw;
     }
 
     .spotify-playlists .card-container .card .artist-img {
@@ -438,6 +450,10 @@ body {
 
     .right .playbar .volume input {
         width: 120px;
+    }
+
+    .right .playbar .seekbar {
+        bottom: 5px;
     }
 }
 
