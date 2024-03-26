@@ -455,6 +455,14 @@ body {
     .right .playbar .seekbar {
         bottom: 5px;
     }
+
+    .spotify-playlists .card-container {
+        max-height: unset;
+        margin-bottom: 30px;
+    }    
+    .spotify-playlists .card-container .card:last-child{
+        margin-bottom: 100px;
+    }    
 }
 
 @media only screen and (max-width:450px) {
